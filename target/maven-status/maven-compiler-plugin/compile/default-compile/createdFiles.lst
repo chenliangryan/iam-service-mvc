@@ -1,0 +1,17 @@
+com/yugabyte/demo/iamservicemvc/repository/UserCredentialsRepository.class
+com/yugabyte/demo/iamservicemvc/domain/UserProfile.class
+com/yugabyte/demo/iamservicemvc/domain/UserSvcAccount.class
+com/yugabyte/demo/iamservicemvc/repository/UserAuditRepository.class
+com/yugabyte/demo/iamservicemvc/service/UserProfileVO.class
+com/yugabyte/demo/iamservicemvc/domain/UserAudit.class
+com/yugabyte/demo/iamservicemvc/domain/UserCredential.class
+com/yugabyte/demo/iamservicemvc/UserController.class
+com/yugabyte/demo/iamservicemvc/service/ServiceAccountVO.class
+com/yugabyte/demo/iamservicemvc/service/UserActivitiesVO.class
+com/yugabyte/demo/iamservicemvc/service/ServiceAccountVO$ServiceAccountVOBuilder.class
+com/yugabyte/demo/iamservicemvc/repository/UserProfileRepository.class
+com/yugabyte/demo/iamservicemvc/domain/UserSvcAccount$UserSvcAccountId.class
+com/yugabyte/demo/iamservicemvc/IamServiceMvcApplication.class
+com/yugabyte/demo/iamservicemvc/PasswordEncryptor.class
+com/yugabyte/demo/iamservicemvc/service/UserService.class
+com/yugabyte/demo/iamservicemvc/repository/UserSvcAccountRepository.class
