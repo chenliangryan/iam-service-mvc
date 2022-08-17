@@ -17,5 +17,5 @@ erDiagram
 ## Test
 
 ```bash
-$ curl http://localhost:8080/user/auth?userId=fleadley0&password=5f4dcc3b5aa765d61d8327deb882cf99 --silent
+$ curl http://localhost:8080/user/auth?userId=fleadley0&passwordHash=5f4dcc3b5aa765d61d8327deb882cf99 --silent
 ```
