@@ -1,6 +1,8 @@
 package com.yugabyte.demo.iamservicemvc.domain;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import javax.persistence.*;
@@ -8,6 +10,7 @@ import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.cglib.core.GeneratorStrategy;
 
 @Entity
 @Table(name = "user_audit")
@@ -17,6 +20,7 @@ import lombok.NoArgsConstructor;
 public class UserAudit implements Serializable {
 
   @Id
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   @Column(name = "id")
   private Long id;
 
@@ -49,4 +53,13 @@ public class UserAudit implements Serializable {
   @Column(name = "location")
   private String location;
 
+  public UserAudit(UserSvcAccount userSvcAccount) {
+    this.userSvcAccount = userSvcAccount;
+    this.action = "login";
+    this.description = "Login activity";
+    this.transactionTime = LocalDateTime.now();
+    this.device = "Webflux Webapp";
+    this.clientIp = "1.1.1.1";
+    this.location = "Singapore";
+  }
 }

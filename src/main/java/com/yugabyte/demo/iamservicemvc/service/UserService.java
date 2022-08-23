@@ -2,6 +2,8 @@ package com.yugabyte.demo.iamservicemvc.service;
 
 import static java.lang.String.format;
 
+import com.yugabyte.demo.iamservicemvc.domain.UserAudit;
+import com.yugabyte.demo.iamservicemvc.domain.UserSvcAccount;
 import com.yugabyte.demo.iamservicemvc.repository.UserAuditRepository;
 import com.yugabyte.demo.iamservicemvc.repository.UserCredentialsRepository;
 import com.yugabyte.demo.iamservicemvc.repository.UserProfileRepository;
@@ -9,6 +11,8 @@ import com.yugabyte.demo.iamservicemvc.repository.UserSvcAccountRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -55,6 +59,7 @@ public class UserService {
     if (userProfileOptional.isEmpty()) {
       throw new RuntimeException(format("%1$s: Missing user profile for userId", userId));
     }
+
     var profileVo = UserProfileVO.from(userProfileOptional.get());
     var svcAccounts = userSvcAccountRepository.findAllByUserCredential_Id(userId)
             .stream()
